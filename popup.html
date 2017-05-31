@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Codystar|Roboto" rel="stylesheet">
+    <script src="sha.js"></script>
+    <script src="popup.js"></script>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      input:focus,
+      select:focus,
+      textarea:focus,
+      button:focus {
+          outline: none;
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 100%;
+        width: 500px;
+        height: 300px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 40px;
+        padding-bottom: 10px;
+        font-family: 'Codystar', cursive;
+        color: #c3c3c3;
+        text-align: center;
+      }
+      span {
+        color: #a0a0a0;
+        width: 140px;
+        font-weight: bold;
+        transition: all .2s ease-in;
+      }
+      .in {
+        width: 100px;
+        margin-right: 2px;
+        padding-left: 5px;
+        box-sizing: border-box;
+        border: 1px solid #e0e0e0;
+        height: 30px;
+        margin-top: -5px;
+      }
+      .validate, .delete, .inject {
+        width: 50px;
+        height: 30px;
+        margin-top: -5px;
+        background-image:none;
+        background-color:transparent;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #e0e0e0;
+        transition: all .2s ease-in;
+      }
+      .delete {
+        width: 125px;
+        margin-left: 5px;
+      }
+      .inject {
+        width: 100%;
+        font-size: 17px;
+      }
+      select:hover {
+        cursor: pointer;
+        color: #000000;
+      }
+      .validate:hover, .delete:hover, .inject:hover {
+        cursor: pointer;
+        background-color: #ffffff;
+        color: #676767;
+      }
+      .in:hover {
+        cursor: pointer;
+        color: #676767;
+      }
+      #chooseProfile {
+        width: 125px;
+        height: 30px;
+        margin-top: -5px;
+        border: 1px solid #e0e0e0;
+        border-radius: 0px !important;
+        background-image:none;
+        background-color:transparent;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        color: #a0a0a0;
+        padding-left: 5px;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        margin: 10px 10px 20px 10px;
+        display: flex;
+        justify-content: space-around;
+        transition: all .2s ease-in;
+      }
+      .container:hover span {
+        cursor: pointer;
+        color: #676767;
+      }
+      .container:hover{
+        cursor: pointer;
+      }
+      #countdown {
+        width: 100%;
+      }
+      #code {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+      }
+      h2 {
+        margin: 15px;
+        display: block;
+        color: #676767;
+      }
+      #errorMsg {
+        color: #d00707;
+        text-align: center;
+        height: 10px;
+        width: 100%;
+        margin-bottom: 0;
+        margin-top: 5px;
+      }
+      #myProgress {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        bottom: 0px;
+      }
+      #myBar {
+        position: absolute;
+        width: 1%;
+        height: 100%;
+        background-color: #63bf63;
+        transition: all .9s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>REQUIRERIS</h1>
+    <div class="container">
+      <span>SELECT A PROFILE</span>
+      <div>
+        <select id="chooseProfile">
+        </select>
+        <input id="deluser" class="delete" type="button" name="del" value="DEL">
+      </div>
+    </div>
+    <div class="container">
+      <span>ADD A PROFILE</span>
+      <div>
+        <input class="in" type="text" name="user" placeholder="User name" id="username">
+        <input class="in" type="text" name="key" placeholder="Secret key" id="userkey">
+        <input id="adduser" class="validate" type="button" name="add" value="ADD">
+      </div>
+    </div>
+    <p id="errorMsg">
+      Error
+    </p>
+    <div id="countdown">
+      <div id="code">
+        <h2 id="totpa">---</h2>
+        <h2 id="totpb">---</h2>
+      </div>
+    </div>
+    <input id="injection" class="inject" type="button" name="inj" value="INJECT">
+    <footer>
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+    </footer>
+  </body>
+</html>
